@@ -57,87 +57,162 @@ html, body {
 	height: 100%;
 }
 
+// My variables
+
 @font-family: Arial;
 @font-size: .5em;
+@font-size2: 1.5rem;
 @width: 100%;
+@padding: 1%;
+@margin: 1%;
 
-.container {
-	width: @width;
+
+
+// My Mixin
+
+.button() {
+	font-size: @font-size2;
+	margin:@margin;
+	color: white;
+	background: blue;
+	padding: @padding;
+	border-radius: 10px;
+}
+
+// Main container
+
+.main {
 	display: flex;
 	font-family: @font-family;
-	padding-top: 1%;
-
+	width: @width;
+	flex-wrap: wrap;
+	
+	.container {
+		background: lightgray;
+		margin: @margin;
+		padding-top: @padding;
+	}
+	
 	.navbar {
+		padding-top: @padding;
 		width: @width;
-		margin: 1%;
-		text-decoration: none;
-		justify-content: space-evenly;
-		text-align: right;
-		
+		margin: @margin;
+		text-align: right;	
 	}
 
-	.main {
-		display: flex;
-		width: @width;
-		background: lightgray;
-		font-family: @font-family;
-		margin: 1%;
+		a {
+			text-decoration: none;
+		}
+
+		a:hover {
+			background: fade(blue, 50%);
+		}
 
 		.title {
+			display: flex;
 			width: @width;
 			font-size: 2em;
 			flex-flow: column wrap;
-			padding: 1%;
+			padding: @padding;
 			
 			.img {
 				width: 25%;
-				padding: 1%;
+				padding: @padding;
 			}
-			
-		}
-	
+		
+		}			
+		
 		.text {
 			font-size: @font-size;
-			padding: 1%;
+			padding: @padding;
 			border-bottom: 1px solid gray;
 		}
 		
 		.text2 {
 			font-size: @font-size;
-			padding: 1%;
+			padding: @padding;
 			border-bottom: 1px solid lightgray;
 		}
 
-		.button {
-			font-size: @font-size;
-			margin: 1%;
-			color: white;
-			background: blue;
-			padding: 1%;
-			border-radius: 10px;
-		}
+	.button {
+		.button();
 	}
+	
 }
 
 .container2 {
 	width: @width;
-	display: flex;
+	display: grid;
 	font-family: @font-family;
 	padding-top: 1%;
-	flex-flow: column wrap;
+	grid-template-columns: 45% 45%;
+	grid-gap: 10em;
 
 	.content-box {
-		width: 50%;
+		width: @width;
 		font-size: 2em;
-		margin: 1%;
-		align-items: space-evenly;
-
+		margin: @margin;
+		padding: @padding;
+		
 		p {
 			padding-top: 1%;
 			font-size: @font-size;
 		}
 	}
+
+	.content-box2 {
+		width: @width;
+		font-size: 1.5em;
+		margin-bottom: @margin;
+		padding: @padding;
+		
+		p {
+			margin-bottom: 1%;
+		}
+
+		.list {
+			border: 1px solid gray;
+			font-size: @font-size;
+			padding: 2%;
+		}
+	}
 }
 
+.container3 {
+	width: 98%;
+	display: grid;
+	font-family: @font-family;
+	padding-top: 1%;
+	margin-left: 1%;
+	font-size: @font-size2;
+	grid-template-rows: 3em;
+	
+	.list {
+		background: 1px solid gray;
+		font-size: @font-size;
+		padding: 2%;
+	}
+	.list:nth-child(odd) {
+		background: 1px solid gray;
+		font-size: @font-size;
+		padding: 2%;
+		background: lightgray;
+		
+	}
 
+	.content-box {
+		width: @width;
+		font-size: @font-size2;
+		margin: @margin;
+		padding: @padding;
+	}
 
+}
+
+.footer {
+	width: @width;
+	margin: 1%;
+	padding: 2%;
+	text-align: center;
+		
+}
