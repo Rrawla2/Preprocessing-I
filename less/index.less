@@ -77,23 +77,37 @@ html, body {
 	background: blue;
 	padding: @padding;
 	border-radius: 10px;
+	border: 2px solid black;
 }
 
 // Main container
 
 .main {
+	@media(max-width: 500px) {
+		margin: auto;
+		padding: 2em;
+	}
 	display: flex;
 	font-family: @font-family;
 	width: @width;
 	flex-wrap: wrap;
 	
 	.container {
+		@media(max-width: 500px) {
+			width: 100%;
+			align-items: center;
+			padding: @padding;
+		}
 		background: lightgray;
 		margin: @margin;
 		padding-top: @padding;
 	}
 	
 	.navbar {
+		@media(max-width: 500px) {
+			text-align: center;
+			padding-bottom: 1em;
+		}
 		padding-top: @padding;
 		width: @width;
 		margin: @margin;
@@ -101,6 +115,9 @@ html, body {
 	}
 
 		a {
+			@media(max-width: 500px) {
+				margin: auto;
+			}
 			text-decoration: none;
 		}
 
@@ -109,6 +126,10 @@ html, body {
 		}
 
 		.title {
+			@media(max-width: 500px) {
+				width: @width;
+				font-size: 1em;
+			}
 			display: flex;
 			width: @width;
 			font-size: 2em;
@@ -119,7 +140,7 @@ html, body {
 				width: 25%;
 				padding: @padding;
 			}
-		
+
 		}			
 		
 		.text {
@@ -135,12 +156,21 @@ html, body {
 		}
 
 	.button {
+		@media(max-width: 500px) {
+			font-size: 1em;
+			text-align: center;
+		}
 		.button();
 	}
 	
 }
 
 .container2 {
+	@media(max-width: 500px) {
+		display: flex;
+		width: @width;
+		text-align: center;
+	}
 	width: @width;
 	display: grid;
 	font-family: @font-family;
@@ -149,6 +179,9 @@ html, body {
 	grid-gap: 10em;
 
 	.content-box {
+		@media(max-width: 500px) {
+			display: none;	
+		}
 		width: @width;
 		font-size: 2em;
 		margin: @margin;
@@ -161,6 +194,11 @@ html, body {
 	}
 
 	.content-box2 {
+		@media(max-width: 500px) {
+			margin: auto;
+			width: 65%;
+					
+		}
 		width: @width;
 		font-size: 1.5em;
 		margin-bottom: @margin;
@@ -171,6 +209,9 @@ html, body {
 		}
 
 		.list {
+			@media(max-width: 500px) {
+				text-align: left;
+			}
 			border: 1px solid gray;
 			font-size: @font-size;
 			padding: 2%;
@@ -186,6 +227,7 @@ html, body {
 	margin-left: 1%;
 	font-size: @font-size2;
 	grid-template-rows: 3em;
+	text-align: center;
 	
 	.list {
 		background: 1px solid gray;
@@ -201,6 +243,9 @@ html, body {
 	}
 
 	.content-box {
+		@media(max-width: 500px) {
+			margin: auto;
+		}
 		width: @width;
 		font-size: @font-size2;
 		margin: @margin;

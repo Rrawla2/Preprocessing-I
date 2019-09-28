@@ -140,10 +140,23 @@ body {
   width: 100%;
   flex-wrap: wrap;
 }
+@media (max-width: 500px) {
+  .main {
+    margin: auto;
+    padding: 2em;
+  }
+}
 .main .container {
   background: lightgray;
   margin: 1%;
   padding-top: 1%;
+}
+@media (max-width: 500px) {
+  .main .container {
+    width: 100%;
+    align-items: center;
+    padding: 1%;
+  }
 }
 .main .navbar {
   padding-top: 1%;
@@ -151,8 +164,19 @@ body {
   margin: 1%;
   text-align: right;
 }
+@media (max-width: 500px) {
+  .main .navbar {
+    text-align: center;
+    padding-bottom: 1em;
+  }
+}
 .main a {
   text-decoration: none;
+}
+@media (max-width: 500px) {
+  .main a {
+    margin: auto;
+  }
 }
 .main a:hover {
   background: rgba(0, 0, 255, 0.5);
@@ -163,6 +187,12 @@ body {
   font-size: 2em;
   flex-flow: column wrap;
   padding: 1%;
+}
+@media (max-width: 500px) {
+  .main .title {
+    width: 100%;
+    font-size: 1em;
+  }
 }
 .main .title .img {
   width: 25%;
@@ -185,6 +215,13 @@ body {
   background: blue;
   padding: 1%;
   border-radius: 10px;
+  border: 2px solid black;
+}
+@media (max-width: 500px) {
+  .main .button {
+    font-size: 1em;
+    text-align: center;
+  }
 }
 .container2 {
   width: 100%;
@@ -194,11 +231,23 @@ body {
   grid-template-columns: 45% 45%;
   grid-gap: 10em;
 }
+@media (max-width: 500px) {
+  .container2 {
+    display: flex;
+    width: 100%;
+    text-align: center;
+  }
+}
 .container2 .content-box {
   width: 100%;
   font-size: 2em;
   margin: 1%;
   padding: 1%;
+}
+@media (max-width: 500px) {
+  .container2 .content-box {
+    display: none;
+  }
 }
 .container2 .content-box p {
   padding-top: 1%;
@@ -210,6 +259,12 @@ body {
   margin-bottom: 1%;
   padding: 1%;
 }
+@media (max-width: 500px) {
+  .container2 .content-box2 {
+    margin: auto;
+    width: 65%;
+  }
+}
 .container2 .content-box2 p {
   margin-bottom: 1%;
 }
@@ -217,6 +272,11 @@ body {
   border: 1px solid gray;
   font-size: 0.5em;
   padding: 2%;
+}
+@media (max-width: 500px) {
+  .container2 .content-box2 .list {
+    text-align: left;
+  }
 }
 .container3 {
   width: 98%;
@@ -226,6 +286,7 @@ body {
   margin-left: 1%;
   font-size: 1.5rem;
   grid-template-rows: 3em;
+  text-align: center;
 }
 .container3 .list {
   background: 1px solid gray;
@@ -243,6 +304,11 @@ body {
   font-size: 1.5rem;
   margin: 1%;
   padding: 1%;
+}
+@media (max-width: 500px) {
+  .container3 .content-box {
+    margin: auto;
+  }
 }
 .footer {
   width: 100%;
