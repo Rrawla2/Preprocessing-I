@@ -54,6 +54,210 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+// My variables
+
+@font-family: Arial;
+@font-size: .5em;
+@font-size2: 1.5rem;
+@width: 100%;
+@padding: 1%;
+@margin: 1%;
+
+
+
+// My Mixin
+
+.button() {
+	font-size: @font-size2;
+	margin:@margin;
+	color: white;
+	background: blue;
+	padding: @padding;
+	border-radius: 10px;
+	border: 2px solid black;
+}
+
+// Main container
+
+.main {
+	@media(max-width: 500px) {
+		margin: auto;
+		padding: 2em;
+	}
+	display: flex;
+	font-family: @font-family;
+	width: @width;
+	flex-wrap: wrap;
+	
+	.container {
+		@media(max-width: 500px) {
+			width: 100%;
+			align-items: center;
+			padding: @padding;
+		}
+		background: lightgray;
+		margin: @margin;
+		padding-top: @padding;
+	}
+	
+	.navbar {
+		@media(max-width: 500px) {
+			text-align: center;
+			padding-bottom: 1em;
+		}
+		padding-top: @padding;
+		width: @width;
+		margin: @margin;
+		text-align: right;	
+	}
+
+		a {
+			@media(max-width: 500px) {
+				margin: auto;
+			}
+			text-decoration: none;
+		}
+
+		a:hover {
+			background: fade(blue, 50%);
+		}
+
+		.title {
+			@media(max-width: 500px) {
+				width: @width;
+				font-size: 1em;
+			}
+			display: flex;
+			width: @width;
+			font-size: 2em;
+			flex-flow: column wrap;
+			padding: @padding;
+			
+			.img {
+				width: 25%;
+				padding: @padding;
+			}
+
+		}			
+		
+		.text {
+			font-size: @font-size;
+			padding: @padding;
+			border-bottom: 1px solid gray;
+		}
+		
+		.text2 {
+			font-size: @font-size;
+			padding: @padding;
+			border-bottom: 1px solid lightgray;
+		}
+
+	.button {
+		@media(max-width: 500px) {
+			font-size: 1em;
+			text-align: center;
+		}
+		.button();
+	}
+	
+}
+
+.container2 {
+	@media(max-width: 500px) {
+		display: flex;
+		width: @width;
+		text-align: center;
+	}
+	width: @width;
+	display: grid;
+	font-family: @font-family;
+	padding-top: 1%;
+	grid-template-columns: 45% 45%;
+	grid-gap: 10em;
+
+	.content-box {
+		@media(max-width: 500px) {
+			display: none;	
+		}
+		width: @width;
+		font-size: 2em;
+		margin: @margin;
+		padding: @padding;
+		
+		p {
+			padding-top: 1%;
+			font-size: @font-size;
+		}
+	}
+
+	.content-box2 {
+		@media(max-width: 500px) {
+			margin: auto;
+			width: 65%;
+					
+		}
+		width: @width;
+		font-size: 1.5em;
+		margin-bottom: @margin;
+		padding: @padding;
+		
+		p {
+			margin-bottom: 1%;
+		}
+
+		.list {
+			@media(max-width: 500px) {
+				text-align: left;
+			}
+			border: 1px solid gray;
+			font-size: @font-size;
+			padding: 2%;
+		}
+	}
+}
+
+.container3 {
+	width: 98%;
+	display: grid;
+	font-family: @font-family;
+	padding-top: 1%;
+	margin-left: 1%;
+	font-size: @font-size2;
+	grid-template-rows: 3em;
+	text-align: center;
+	
+	.list {
+		background: 1px solid gray;
+		font-size: @font-size;
+		padding: 2%;
+	}
+	.list:nth-child(odd) {
+		background: 1px solid gray;
+		font-size: @font-size;
+		padding: 2%;
+		background: lightgray;
+		
+	}
+
+	.content-box {
+		@media(max-width: 500px) {
+			margin: auto;
+		}
+		width: @width;
+		font-size: @font-size2;
+		margin: @margin;
+		padding: @padding;
+	}
+
+}
+
+.footer {
+	width: @width;
+	margin: 1%;
+	padding: 2%;
+	text-align: center;
+		
+}
